@@ -1,3 +1,4 @@
+{% raw %}
 <script type="text/x-undescore-template" id="template-contents-site_top">
   <div id="who-liked-form">
     <input type="text" id="who-liked"><span class="likes">likes ...</span>
@@ -20,4 +21,11 @@
 <script type="text/x-undescore-template" id="template-photo">
   <% var photo = get_thumbnail(250); %>
   <img class="primary" src="<%-photo.url %>" width="<%-photo.width %>" height="<%-photo.height %>" />
+
+  <ul class="like-users">
+<% var likes = get('likes'); for(var idx = 0;idx < likes.length;++idx) { var username = likes[idx]; %>
+    <li><a href="/who/<%-username %>"><%-username %></a></li>
+<% } %>
+  </ul>
 </script>
+{% endraw %}

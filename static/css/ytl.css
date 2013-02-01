@@ -228,6 +228,19 @@ body {
 .photo-list .photo > img.primary {
   width: 200px;
 }
+.photo-list .photo .like-users {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.photo-list .photo .like-users li {
+  list-style: none;
+  display: inline-block;
+  font-size: 12px;
+}
+.photo-list .photo .like-users li a {
+  color: #234;
+}
 #who-liked-form {
   width: 400px;
   margin: 10px auto 20px;
