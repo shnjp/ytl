@@ -23,4 +23,16 @@ class Blog(Document):
     }
     required_fields = ['blog_name']
 
-__all_classes__ = [Photo, Blog]
+
+class Similarity(Document):
+    __collection__ = 'similarities'
+
+    structure = {
+        'key': basestring,
+        'pair': [basestring],
+        'coefficient': float
+    }
+    required_fields = ['key', 'pair', 'coefficient']
+
+
+__all_classes__ = [Photo, Blog, Similarity]

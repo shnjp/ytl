@@ -237,9 +237,18 @@
   });
 
   WhoView = SiteTopView.extend({
+    template: _.template($('#template-contents-who').html()),
     initialize: function(options) {
+      var _this = this;
       SiteTopView.prototype.initialize.call(this, options);
-      return this.$who.val(options.who);
+      this.$who.val(options.who);
+      return $.ajax("/who/" + options.who + "/similars").success(function(response) {
+        var html;
+        html = _.map(response.similars, function(user) {
+          return "<li><a href=\"/who/" + user + "\">" + user + "</a></li>";
+        });
+        return _this.$el.find('#who-similar-to-you ul.users').html(html.join('\n'));
+      });
     },
     make_photo_list: function(options) {
       return new UserLikePhotoList({

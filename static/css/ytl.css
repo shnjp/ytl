@@ -243,7 +243,7 @@ body {
 }
 #who-liked-form {
   width: 400px;
-  margin: 10px auto 20px;
+  margin: 10px auto 10px;
   background: #fff;
   padding: 8px;
   text-align: center;
@@ -253,4 +253,25 @@ body {
   padding-left: 8px;
   font: 18px/24px 'Grand Hotel', cursive;
   color: #191f19;
+}
+#who-similar-to-you {
+  width: 600px;
+  margin: 10px auto 20px;
+  background: #fff;
+  padding: 8px;
+  box-shadow: #ffffff 0px 1px 0px 0px inset, rgba(34, 25, 25, 0.398438) 0px 1px 3px 0px;
+}
+#who-similar-to-you h1 {
+  font-size: 14px;
+}
+#who-similar-to-you .users {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#who-similar-to-you .users li {
+  display: inline-block;
+}
+#who-similar-to-you .users li a {
+  color: #234;
 }

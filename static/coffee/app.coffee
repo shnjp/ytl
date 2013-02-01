@@ -143,11 +143,19 @@ SiteTopView = Backbone.View.extend
       if who
         global.router.navigate("who/#{who}", {trigger: true})
 
+## /who/<:who>
 
 WhoView = SiteTopView.extend
+  template: _.template($('#template-contents-who').html())
   initialize: (options) ->
     SiteTopView.prototype.initialize.call(this, options)
     @$who.val(options.who)
+
+    $.ajax("/who/#{options.who}/similars")
+      .success (response) =>
+        html = _.map response.similars, (user) ->
+          return "<li><a href=\"/who/#{user}\">#{user}</a></li>"
+        @$el.find('#who-similar-to-you ul.users').html(html.join('\n'))
 
   make_photo_list: (options) ->
     return new UserLikePhotoList({who: options.who})

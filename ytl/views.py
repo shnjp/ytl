@@ -26,6 +26,17 @@ def who_photos(who):
     return response_photolist({'likes': who})
 
 
+@app.route('/who/<who>/similars')
+def who_similars(who):
+    similars = []
+    query = db.Similarity.find({'pair': who}).sort([('coefficient', -1)]).limit(20)
+    for s in query:
+        pair = s['pair']
+        similars.append(pair[0] if pair[1] == who else pair[1])  # TODO:もっと綺麗にかけそう
+
+    return jsonify(similars=similars)
+
+
 def response_photolist(query):
     skip = int(request.args.get('skip', '0'), 10)
 
