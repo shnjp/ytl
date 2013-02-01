@@ -145,7 +145,7 @@ def digg_tumbler_image(db, url):
         'timestamp': t,
         'reblog_key': post['reblog_key'],
         'photo_link': photo_link,
-        'photso': post['photos'],
+        'photos': post['photos'],
         'date_updated': datetime.utcnow(),
         'posts': list(posts),
         'reblogs': reblogs,

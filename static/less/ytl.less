@@ -1,0 +1,48 @@
+@import "../bootstrap/less/reset.less";
+@baseLineHeight:        20px;
+@inputHeight:           @baseLineHeight + 10px; // base line-height + 8px vertical padding + 2px top/bottom border
+@import "../bootstrap/less/mixins.less";
+
+html {
+	background: #f7f5f5 url(../images/paper.jpg) repeat;
+}
+body {
+	margin: 0px;
+}
+
+
+#site-header {
+	background: #faf7f7;
+	box-shadow: rgb(255, 255, 255) 0px 1px 0px 0px inset, rgba(34, 25, 25, 0.398438) 0px 1px 3px 0px;
+	padding: 8px 0;
+	margin-bottom: 20px;
+
+	#site-logo {
+		display: block;
+		margin: 0 auto;
+		background: -webkit-image-set(url(../images/ytl-logo@2x.png) ~"2x") no-repeat;
+		width: 128px;
+		height: 25px;
+	}
+}
+
+
+
+.photo-list {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+
+	.photo {
+		background-color: #fff;
+		box-shadow: 0 1px 3px rgba(34,25,25,0.4);
+		padding: 15px;
+		width: 200px;
+		margin: 0 0 10px 0;
+		float: left;
+
+		> img.primary {
+			width: 200px;
+		}
+	}
+}
