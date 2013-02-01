@@ -204,7 +204,6 @@ body {
   background: #faf7f7;
   box-shadow: #ffffff 0px 1px 0px 0px inset, rgba(34, 25, 25, 0.398438) 0px 1px 3px 0px;
   padding: 8px 0;
-  margin-bottom: 20px;
 }
 #site-header #site-logo {
   display: block;
@@ -228,4 +227,17 @@ body {
 }
 .photo-list .photo > img.primary {
   width: 200px;
+}
+#who-liked-form {
+  width: 400px;
+  margin: 10px auto 20px;
+  background: #fff;
+  padding: 8px;
+  text-align: center;
+  box-shadow: #ffffff 0px 1px 0px 0px inset, rgba(34, 25, 25, 0.398438) 0px 1px 3px 0px;
+}
+#who-liked-form .likes {
+  padding-left: 8px;
+  font: 18px/24px 'Grand Hotel', cursive;
+  color: #191f19;
 }
