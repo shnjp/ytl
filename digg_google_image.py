@@ -118,11 +118,15 @@ def digg_tumbler_image(db, url):
 
     photo_link = post['photos'][0]['original_size']['url']
 
+    timestamp = post['timestamp']
     likes = []
     reblogs = []
     posts = set([post_key])
     blogs = set()
     for note in post['notes']:
+        t = note.get('timestamp')
+        if t and t < timestamp:
+            timestamp = t
         ty = note['type']
         blogs.add(note['blog_name'])
         if ty == 'like':
@@ -138,6 +142,7 @@ def digg_tumbler_image(db, url):
 
     # postを投稿
     doc = {
+        'timestamp': t,
         'reblog_key': post['reblog_key'],
         'photo_link': photo_link,
         'photso': post['photos'],
