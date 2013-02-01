@@ -2,13 +2,10 @@
 import os
 import sys
 import time
+from crendentials import *
 
-GOOGLE_API_KEY = 'AIzaSyCagzy7tbqWckCaRbSm49LERYEOYoGP188'
-GOOGLE_API_ENDPOINT = 'https://www.googleapis.com/customsearch/v1'
 GOOGLE_CX = '000678964075068892961:8tmauknnxqw'
 
-TUMBLER_CONSUMER_KEY = 'mVuqdNPTMEYHaMM35y6lYbFcNkhuYeHm3WfouncsbfrcPqtjmT'
-TUMBLER_SECRET_KEY = 'aeEqKDd5vLmtAn7WV9Ff77RhZwxIGcTyKnErIOoGnOL3XcGOUi'
 TUMBLER_API_ENDPOINT = 'http://api.tumblr.com'
 TUMBLER_IMAGE_POST_API_ENDPOINT = TUMBLER_API_ENDPOINT + '/v2/blog/{blogname}.tumblr.com/posts/photo'
 
